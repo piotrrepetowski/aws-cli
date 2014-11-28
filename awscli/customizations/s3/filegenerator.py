@@ -240,6 +240,8 @@ class FileGenerator(object):
         checks for files that do not exist and files that the user does
         not have read access.
         """
+        print "Before checking whether path exists we have the following path \"%s\"" % path
+        print "When I run os.path.exists(%s) I get %s" % (path, os.path.exists(path))
         if not os.path.exists(path):
             warning = create_warning(path, "File does not exist.")
             self.result_queue.put(warning)
